@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height = device-height, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Enter Patient Details</title>
+     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{{url_for('static', filename='images/logo.svg')}}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.svg')}}" alt="alternative"></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+         <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="/"><img src="{{url_for('static', filename='images/logo.svg')}} " alt="alternative"></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Predict">PREDICT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="report">VISUALIZE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Insights">INSIGHTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav> <!-- end of navbar -->
+	    </nav> <!-- end of navbar -->
+
+    <!-- end of navbar -->
+
+
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Individual patient Details</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Breadcrumbs -->
+    <div class="ex-basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumbs">
+                        <a href="/">Back</a><i class="fa fa-angle-double-right"></i><span>Predict patient has Cardiovascular Disease or not?</span>
+                    </div> <!-- end of breadcrumbs -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of breadcrumbs -->
+
+
+    <!-- Terms Content -->
+    <div id="Predict" class="ex-basic-2">
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Please Fill in the Patient details.</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- Contact Form -->
+								<form id="contactForm" data-toggle="validator" data-focus="false" action="{{ url_for('Individual') }}" method="POST">
+								<div class="form-group">
+									<input name="age" type="number" min="10798" max="23713" class="form-control-input" id="age" required>
+									<label class="label-control" for="age">Age(Days):</label>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="gender" list="verf_list" class="form-control-input" required select>
+									<label class="label-control" for="gender">GENDER</label>
+									<datalist id="verf_list">
+									<option value="1">
+									<option value="2">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>	
+								<div class="form-group">
+									<input name="height" type="number" min="55" max="250" class="form-control-input" id="height" required>
+									<label class="label-control" for="height">HEIGHT(cm):</label>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="weight" type="number" min="10" max="200" class="form-control-input" id="weight" required>
+									<label class="label-control" for="weight">WEIGHT(Kg):</label>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="ap_hi" class="form-control-input" type="number" min="0" max="16020" id="ap_hi" required>
+									<label class="label-control" for="ap_hi">Systolic blood pressure :</label>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="ap_lo" class="form-control-input" type="number" min="0" max="11000" id="ap_lo" required>
+									<label class="label-control" for="ap_lo">Diastolic blood pressure </label>
+									<div class="help-block with-errors"></div>
+								</div>
+								
+							
+                    </div> <!-- end of contact form -->
+                </div> 	<!-- end of text-container -->
+				                <div class="col-lg-6">
+                    <div class="text-container">
+							<!-- Contact Form -->
+								<div class="form-group">
+									<input name="cholesterol" list="chol_list" class="form-control-input" required select>
+									<label class="label-control" for="cholesterol">Cholesterol :</label>
+									<datalist id="chol_list">
+									<option value="1">
+									<option value="2">
+									<option value="3">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="gluc" list="glu_list" class="form-control-input"  required  select>
+									<label class="label-control" for="gluc">Glucose:</label>
+									<datalist id="glu_list">
+									<option value="1">
+									<option value="2">
+									<option value="3">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="smoke" list="smo_list" class="form-control-input" required select>
+									<label class="label-control" for="smoke">Smoking:</label>
+									<datalist id="smo_list">
+									<option value="0">
+									<option value="1">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="alco"  list="alc_list" class="form-control-input" required select>
+									<label class="label-control" for="alco">Alcohol intake :</label>
+									<datalist id="alc_list">
+									<option value="0">
+									<option value="1">
+									</datalist>
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="form-group">
+									<input name="active" list="phy_list" class="form-control-input" required select>
+									<label class="label-control" for="active">Physical activity </label>
+									<datalist id="phy_list">
+									<option value="0">
+									<option value="1">
+									</datalist>
+						
+									<div class="help-block with-errors"></div>
+								</div>
+                    </div> <!-- end of contact form -->
+					</div> 	<!-- end of text-container -->
+                    <button type="submit" class="form-control-submit-button">MAKE PREDICTION</button>
+					</form>
+					</div> <!-- end of container -->
+				<div class="result" align="center">
+						{% if result %}
+						{% for variable, value in original_input.items() %}
+						<br><b>{{ variable }}</b> : {{ value }}
+						{% endfor %}
+						<br>
+						<br> Test Result:
+						<p style="font-size:20px">{{ result }}</p>
+						{% endif %}
+				</div>
+		</div>
+    </div> <!-- end of ex-basic -->
+    <!-- end of terms content -->
+ 	  <!-- Details 2 -->
+<div id="Insights" class="tabs">
+            <div class="row">
+
+	  <div class="area-1">
+
+
+            <div class="tabs-container">
+
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-th"></i>ROC AUC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-th"></i>Precision Recall</a>
+                    </li>
+
+                </ul>
+                <!-- end of tabs links -->
+
+                <!-- Tabs Content -->
+                <div class="tab-content" id="ariaTabsContent">
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <h4>ROC AUC Score</h4>
+                        <p>The following graph shows the ROC AUC Curve for Random Forest Model.</p>
+
+                        <!-- Progress Bars -->
+                         <div class="col-lg-5 col-xl-6">
+                    <div class="image-container">
+                        <img class="card-image" src="{{url_for('static', filename='images/random2.jpg')}}" alt="alternative" width="600" height="300">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                        <!-- end of progress bars -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <h4>Precission Recall Score </h4>
+                        <p>The following graph shows the Precision Recall Curve for Random Forest Model. </p>
+
+                       <div class="col-lg-5 col-xl-6">
+                    <div class="image-container">
+                        <img class="card-image" src="{{url_for('static', filename='images/random2_p_r.jpg')}}"  alt="alternative" width="600" height="300">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+
+                    <!-- end of tab -->
+
+                </div> <!-- end of tab-content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of tabs-container -->
+        </div>
+     </div>
+</div> <!-- end of tabs -->
+    <!-- Footer -->
+    <div id="contact" class="footer">
+        <div class="container">
+            <div class="row">
+			<img class="card-image" src="{{url_for('static', filename='images/udaykumar.jpg')}}"  width="150" height="150" alt="alternative">
+
+                <div class="col-md-6">
+                    <div class="text-container about">
+                        <h4>Developed by:</h4>
+                        <h2 class="white">Udaykumar Gampa</h2>
+						<p class="white">MCA Completed From CBIT,Hyderabad</p>
+						<p class="white">Email: gampauday09@gmail.com</p>
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Connect</h4>
+                        <ul class="list-unstyled li-space-lg white">
+                            <li>
+                                <a class="white" href="https://www.linkedin.com/in/udaykumar-gampa-15390b1ab">LinkedIn</a>
+                            </li>
+                            <li>
+                                <a class="white" href="https://github.com/gampa-udaykumar">Github</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Tools Used</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <p class="white">Sweetviz</p>
+                            </li>
+                            <li>
+                               <p class="white">Tableau</p>
+                            </li>
+                        
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+
+   <!-- end of copyright --> 
+    <!-- end of copyright -->
+    <!-- Scripts -->
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/popper.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/jquery.easing.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/jquery.magnific-popup.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/morphext.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{url_for('static', filename='js/validator.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/scripts.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="{{url_for('static', filename='js/swiper.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+
+</body>
+</html>
